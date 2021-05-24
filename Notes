@@ -1,0 +1,212 @@
+Map() & flatMap()
+
+
+
+Java 8 stream API provides map() and flatMap() methods 
+both these methods are intermediate methods and returns another stream as part of the output
+
+
+
+
+map() method is used for transformation
+
+
+flatMap() used for transformation & flattering
+
+
+flatMap() ---> Map() + flattering
+
+
+
+
+  its combination of both
+  
+  
+  
+ 
+
+-->
+
+map() 
+------
+
+method used for DAta Transformation
+
+map() takes Stream<T> as input and return Stream <R>
+
+
+
+------------------------------------->
+Stream<R> map(Stream<T> input){}
+
+
+<R> Stream<R> map(Function<? super T, ? extends R> mapper);
+
+------------------------------------->
+
+
+
+
+it's mapper function produces single value for each input value
+hence it is callled one to one mapping
+
+
+
+
+
+
+--->
+
+it takes the argument as Function, which is functional interface
+
+whatever the stream input you will pass, this mapper function will apply for 
+all the ipnut of the stream
+
+
+
+
+
+
+ 
+------------------------------------->
+
+
+flatMap()   ----> method -->   map() + Flattering 
+
+
+flatMap() takes Stream<Stream<T>> as input and return Stream<R>
+
+
+
+
+Stream<R> map(Stream<Stream<T>> input){}
+
+
+<R> Stream<R> flatMap(Function? Super T, ? extends  Stream<? extends R>> mapper);
+
+
+
+
+
+It's mapper function produces mutliple value for each iput value
+
+hence it is called  One to Many mapping
+
+
+
+
+
+
+
+------------------------------------->
+
+
+
+
+
+
+
+
+
+What is Data Transformation and Flattering
+
+
+
+
+Stream.of("a","b","c","d");
+
+
+
+lets say we have stream of data
+ all are in lower case, as I want map these lower case into upper case 
+ 
+ 
+ I want to return as seperate stream
+ 
+ 
+ 
+ 
+ this term is called Data transformation
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Converting lowercase to uppercase is called mapping
+ 
+ and  return it as another stream is called ... Data transformation
+ 
+ 
+ 
+ and entire process is called processing the data
+ 
+ 
+ 
+ 
+ 
+ ------------------------------------->
+ 
+ 
+ 
+ 
+ Lets understand , I have stream of stream data
+ 
+ 
+ 
+ [[1,2], [3,4],[5,6],[7,8]]
+ 
+ 
+ 
+ 
+ 
+ one stream contains multiple streams
+ 
+ [1,2]  is one stream
+ [3,4]  is another stream
+ [5,6]  is another stream
+ 
+ 
+ 
+ I just want to combine entire stream into single stream
+ 
+ 
+ 
+ this converting of stream of stream is called data flattering
+ 
+ 
+ 
+ ------------------------------------->
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Lets assume our requirement
+ 
+ -->
+ get all the email for each customer
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+I just want to get the list of email ids, which is nothing but List of strings
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+
+
+
